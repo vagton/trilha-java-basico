@@ -1,0 +1,48 @@
+classDiagram
+    class IPhone {
+        - String modelo
+        - double tamanhoTela
+        - String resolucaoTela
+        - String sistemaOperacional
+        - double versaoOS
+        - boolean wifiHabilitado
+        - boolean bluetoothHabilitado
+        - List~String~ appsInstalados
+        + tocar()
+        + pausar()
+        + selecionarMusica(String musica)
+        + ligar(String numero)
+        + atender()
+        + iniciarCorreioVoz()
+        + exibirPagina(String url)
+        + adicionarNovaAba()
+        + atualizarPagina()
+        + exibirFotos()
+        + tirarFoto()
+        + visualizarEmail()
+        + acessarMapa()
+    }
+
+    class ReprodutorMusical {
+        + tocar()
+        + pausar()
+        + selecionarMusica(String musica)
+    }
+
+    class AparelhoTelefonico {
+        + ligar()
+        + desligar()
+        + ligar(String numero)
+        + atender()
+        + iniciarCorreioVoz()
+    }
+
+    class NavegadorInternet {
+        + exibirPagina(String url)
+        + adicionarNovaAba()
+        + atualizarPagina()
+    }
+
+    IPhone ..|> ReprodutorMusical
+    IPhone ..|> AparelhoTelefonico
+    IPhone ..|> NavegadorInternet
